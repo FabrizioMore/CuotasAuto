@@ -6,11 +6,11 @@ Instrucciones
 
 3. Ingresar:
 
-     Número de fila: 2
-     Considerando: cualquier cosa
-     Decreto? (s/n): n (en caso de ingresar algo distinto a 's' o 'n', el script se interrumpe)
-     Número de Resolución: 1111/20
-     Número de Actuación Rendida: E28-2020-00000-A
+- Número de fila: 2
+- Considerando: cualquier cosa
+- Decreto? (s/n): n (en caso de ingresar algo distinto a 's' o 'n', el script se interrumpe)
+- Número de Resolución: 1111/20
+- Número de Actuación Rendida: E28-2020-00000-A
 
 4. El script se ejecuta y se abren los archivos word mostrando el resultado del mismo.
 
