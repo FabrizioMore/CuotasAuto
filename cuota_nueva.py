@@ -6,7 +6,7 @@ from __pycache__ import numeros as num
 import os
 
 #Defino el DataFrame con el que voy a trabajar#
-df = pd.read_excel(r'C:\Users\mg_fa\OneDrive\Escritorio\Resolucion Auto\Templates\Resoluciones.xlsx')
+df = pd.read_excel(r'C:\Users\mg_fa\OneDrive\Escritorio\CuotasAuto\Templates\Resoluciones.xlsx')
 #Con ésto elijo la fila del archivo Excel que quiero utilizar#
 numero_de_fila = int(input('Número de fila: '))- 2
 n = numero_de_fila
@@ -43,7 +43,7 @@ def resolucion(n):
 resolucion(n)
 
 #cuota
-resolucion = DocxTemplate(r'C:\Users\mg_fa\OneDrive\Escritorio\Resolucion Auto\Templates\TEMPLATE_CUOTA.docx')
+resolucion = DocxTemplate(r'C:\Users\mg_fa\OneDrive\Escritorio\CuotasAuto\Templates\TEMPLATE_CUOTA.docx')
 
 if input('Decreto? (S/N): ').upper() == 'S':
     decreto = 'y Decreto ' + input('Número de Decreto: ')
@@ -52,7 +52,7 @@ else:
 
 
 # ---------------------------- 1. GENERO LA NOTA ----------------------------------#
-nota = DocxTemplate(r'C:\Users\Usuario\PyApps\Notas Auto\Templates\template nota prox cuota.docx')
+nota = DocxTemplate(r'C:\Users\mg_fa\OneDrive\Escritorio\CuotasAuto\Templates\template nota prox cuota.docx')
 
 numero_cuota_generada = input('Cuota/s Nº: ')
 resolucion_gral = input('Número de Resolución: ')
@@ -70,8 +70,7 @@ context_nota['cuota_anterior'] = 'Cabe mencionar que la Actuación Simple Nº '+
 
 filename_nota = df['Institución'][n] + ' - Cuota N° ' + numero_cuota_generada + '.docx'
 
-# path_nota = r'\\PRIVADASECRETAR\f\SecGral\APOYOS 2015-2016\MARTIN\PROVIDENCIAS\ ' + filename_nota
-path_nota = r'C:\Users\Usuario\Desktop\test_nota.docx'
+path_nota = r'C:\Users\mg_fa\OneDrive\Escritorio\CuotasAuto\Ejemplos\test_nota.docx'
 nota.render(context_nota)
 nota.save(path_nota)
 
@@ -92,18 +91,7 @@ context_resolucion = {
 'numero_actuacion_rendida' : numero_actuacion_rendida
 }
 
-
-
-# if str(nombre)[0].upper() == 'F':
-#     path_resolucion = (r'\\PRIVADASECRETAR\f\SecGral\APOYOS 2015-2016\APOYOS INSTITUCIONALES\FUNDACIONES\ '+ nombre.upper() + ' (Cuota Nº'+ numero_cuota_generada + ') ' + numero_actuacion[8:14] +'.docx')
-# elif str(nombre)[0:2].upper() == 'CO':
-#     path_resolucion = (r'\\PRIVADASECRETAR\f\SecGral\APOYOS 2015-2016\APOYOS INSTITUCIONALES\COOPERATIVAS\ '+ nombre.upper() + ' (Cuota Nº'+ numero_cuota_generada + ') ' + numero_actuacion[8:14] +'.docx')
-# elif str(nombre)[0:2].upper() == 'CL':
-#     path_resolucion = (r'\\PRIVADASECRETAR\f\SecGral\APOYOS 2015-2016\APOYOS INSTITUCIONALES\CLUB\ '+ nombre.upper() + ' (Cuota Nº'+ numero_cuota_generada + ') ' + numero_actuacion[8:14] +'.docx')
-# else:
-#     path_resolucion = (r'\\PRIVADASECRETAR\f\SecGral\APOYOS 2015-2016\APOYOS INSTITUCIONALES\ASOCIACIONES\ '+ nombre.upper() + ' (Cuota Nº'+ numero_cuota_generada + ') ' + numero_actuacion[8:14] +'.docx')
-
-path_resolucion = r'C:\Users\Usuario\Desktop\test.docx'
+path_resolucion = r'C:\Users\mg_fa\OneDrive\Escritorio\CuotasAuto\Ejemplos\test.docx'
 
 resolucion.render(context_resolucion)
 resolucion.save(path_resolucion)
